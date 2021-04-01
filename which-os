@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Basic deduction of OS flavour using $OSTYPE
+
+case $OSTYPE in
+    linux*)     PLATFORM=debian;;
+    darwin*)    PLATFORM=darwin;;
+esac
+
+
+
