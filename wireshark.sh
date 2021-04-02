@@ -8,7 +8,7 @@ case $PLATFORM in
     ;;
 
   darwin*)
-    brew install wireshark
+    brew install --cask wireshark
     ;;
 
   *)
