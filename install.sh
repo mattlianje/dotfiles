@@ -7,7 +7,7 @@
 
 # You can define what will be installed.
 
-ACTIONS = (
+ACTIONS=(
     # --- Pre-installation tasks ---
     pre-install
 
