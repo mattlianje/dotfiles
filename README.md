@@ -1,3 +1,3 @@
 # Unix-like system setup 
 
-Local dev setup for MacOS or Debian. 
+Personal setup for MacOS or Debian based machines. `$ ./install.sh`
