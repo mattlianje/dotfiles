@@ -350,6 +350,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox'
+Plug 'preservim/NERDTree'
 
 call plug#end()
 
