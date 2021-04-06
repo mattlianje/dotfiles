@@ -27,7 +27,6 @@ ACTIONS = (
     tmux
     k8
     htop
-    wireshark
 
     # --- Casks ---
     docker
@@ -37,6 +36,7 @@ ACTIONS = (
     iterm2
     virtualbox
     intellij-idea
+    wireshark
     datagrip
 )
 
