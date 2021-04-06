@@ -2,6 +2,7 @@
 
 source which-os
 source dotfile-utils
+source echocolours
 
 case $PLATFORM in
   debian*)

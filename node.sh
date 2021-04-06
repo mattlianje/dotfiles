@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source which-os
+source echocolours
 
 case $PLATFORM in
   debian*)
