@@ -10,7 +10,8 @@ case $PLATFORM in
 
   darwin*)
     brew install pyenv
-    brew install python
+    pyenv install $(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
+    pyenv global $(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
     brew install pip
     brew install jupyter
     ;;

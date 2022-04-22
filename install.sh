@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# ------------------------------------------------------------------#
-# UNIX-like local-dev setup                                         #
-# @author: Matthieu Court (matthieu.court@protonmail.com)           #
-# ------------------------------------------------------------------#
+# ------------------------------------------------------------------
+# [Author: Matthieu Court] 
+# [E-mail: matthieu.court@protonmail.com]
+#
+#         Personal UNIX-like setup for Darwin and Debian based machines.
+# ------------------------------------------------------------------
 
 # You can define what will be installed.
 
@@ -12,32 +14,36 @@ ACTIONS=(
     pre-install
 
     # --- Packages ---
-    git
+    coursier
     curl
-    wget
-    python
-    java8
-    scala
-    sbt
-    r
-    minikube
-    vim
-    lolcat
-    node
-    tmux
-    k8
+    git
     htop
+    java8
+    k8
+    kubectl
+    lolcat
+    minikube
+    node
+    python
+    r
+    sbt
+    scala
+    tmux
+    vim
+    wget
 
     # --- Casks ---
-    docker
+    brave
     chrome
-    firefox
-    slack
-    iterm2
-    virtualbox
-    intellij-idea
-    wireshark
     datagrip
+    docker
+    firefox
+    intellij-idea
+    iterm2
+    slack
+    sublime
+    virtualbox
+    wireshark
 )
 
 source echocolours
