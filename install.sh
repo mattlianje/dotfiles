@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ------------------------------------------------------------------
-# [Author: Matthieu Court] 
+# [Author: Matthieu Court]
 # [E-mail: matthieu.court@protonmail.com]
 #
 #         Personal UNIX-like setup for Darwin and Debian based machines.
@@ -16,6 +16,7 @@ ACTIONS=(
     # --- Packages ---
     coursier
     curl
+    fish
     git
     htop
     java8
@@ -40,6 +41,7 @@ ACTIONS=(
     firefox
     intellij-idea
     iterm2
+    rectangle
     slack
     sublime
     virtualbox
