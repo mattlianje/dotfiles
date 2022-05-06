@@ -6,11 +6,11 @@ source echocolours
 case $PLATFORM in
   debian*)
     # not necessary
-    # sudo apt-get install git -y
+    sudo apt-get install -y stow
     ;;
 
   darwin*)
-    brew install git
+    brew install stow
     ;;
 
   *)

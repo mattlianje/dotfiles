@@ -4,13 +4,12 @@ source which-os
 
 case $PLATFORM in
   debian*)
-    # not necessary
-    # sudo apt-get install git -y
+    # not necessary: tree is packaged with Ubuntu.
     ;;
 
   darwin*)
-    brew install vim
-    ;;
+     brew install tree
+     ;;
 
   *)
     log_error "OS not supported"
@@ -18,4 +17,5 @@ case $PLATFORM in
     ;;
 
 esac
+
 
