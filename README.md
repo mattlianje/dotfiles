@@ -8,7 +8,7 @@ $ cd setup
 $ sh install.sh
 
 # Symlinks/unlinks specified dotfiles under `/dotfiles` to the user's home directory using GNU stow
-$ symlink-dotfiles.sh
-$ unlink-dotfiles.sh
+$ sh symlink-dotfiles.sh
+$ sh unlink-dotfiles.sh
 
 ```
