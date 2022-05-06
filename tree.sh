@@ -1,7 +1,6 @@
 #!/bin/bash
 
 source which-os
-source dotfile-utils
 
 case $PLATFORM in
   debian*)
