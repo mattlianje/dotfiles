@@ -29,7 +29,9 @@ ACTIONS=(
     r
     sbt
     scala
+    stow
     tmux
+    tree
     vim
     wget
 
@@ -86,3 +88,4 @@ if [ ${#NOT_INSTALLED[@]} -ne 0 ]; then
   printf "\033[1;31m  %s\n\033[0m" "${NOT_INSTALLED[@]}"
 fi
 echo "Installation finished."
+
