@@ -1,9 +1,9 @@
-# ------------------------------------------------------------------
-# [Author: Matthieu Court]
-# [E-mail: matthieu.court@protonmail.com]
-#
-#         Personal vim runtime config for Darwin and Debian based machines.
-# ------------------------------------------------------------------
+" ------------------------------------------------------------------
+" [Author: Matthieu Court]
+" [E-mail: matthieu.court@protonmail.com]
+"
+"         Personal vim runtime config for Darwin and Debian based machines.
+" ------------------------------------------------------------------
 
 set history=500
 
