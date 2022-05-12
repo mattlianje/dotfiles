@@ -25,6 +25,7 @@ ACTIONS=(
     lolcat
     minikube
     node
+    postgres
     python
     r
     sbt
