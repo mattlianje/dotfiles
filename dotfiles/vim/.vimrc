@@ -134,9 +134,10 @@ set si "Smart indent
 set wrap "Wrap lines
 
 
-""""""""""""""""""""""""""""""
-" => Visual mode related
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Visual Mode Related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Always show the status line
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
@@ -199,9 +200,9 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Status Line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
 
@@ -240,6 +241,18 @@ endfun
 if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
+
+" Use fzf to search files with CTRL+f
+nnoremap <silent> <C-p> :Files<CR>
+
+
+" Start NERDTree and put the cursor back in the other window.
+"autocmd VimEnter * NERDTree | wincmd p
+
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Finding it more pleasant to not open NerdTree on run
+
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -329,14 +342,10 @@ endfunction
 :set number relativenumber
 :set nu rnu
 
-" Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
 
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Finding it more pleasant to not open NerdTree on run
-nnoremap <C-t> :NERDTreeToggle<CR>
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins using VimPlug 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight VertSplit cterm=NONE
 
 " Download Vim-Plug if it is not installed yet
@@ -360,8 +369,13 @@ Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colour schemes & other visuals
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 :set foldcolumn=0
-colorscheme gruvbox 
 "set bg=light   " Setting light mode
-"let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'soft'
+
+colorscheme gruvbox 
+
