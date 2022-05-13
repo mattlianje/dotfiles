@@ -353,6 +353,9 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox'
 Plug 'preservim/NERDTree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'derekwyatt/vim-scala'
 
 call plug#end()
 
