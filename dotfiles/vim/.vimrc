@@ -245,7 +245,13 @@ endif
 " Use fzf to search files with CTRL+f
 nnoremap <silent> <C-p> :Files<CR>
 
+
+" Start NERDTree and put the cursor back in the other window.
+"autocmd VimEnter * NERDTree | wincmd p
+
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Finding it more pleasant to not open NerdTree on run
+
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 
@@ -335,11 +341,6 @@ endfunction
 " turn hybrid line / relative lines
 :set number relativenumber
 :set nu rnu
-
-" Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
-
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
