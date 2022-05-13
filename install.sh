@@ -17,6 +17,7 @@ ACTIONS=(
     coursier
     curl
     fish
+    fzf
     git
     htop
     java8
