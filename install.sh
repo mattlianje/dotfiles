@@ -29,6 +29,7 @@ ACTIONS=(
     postgres
     python
     r
+    ripgrep
     sbt
     scala
     stow

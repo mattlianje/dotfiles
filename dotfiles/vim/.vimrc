@@ -251,8 +251,11 @@ nnoremap <silent> <C-p> :Files<CR>
 
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Finding it more pleasant to not open NerdTree on run
-
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" Use ripgrep to search inside a file with LEADER+f
+" Note: ripgrep must be installed
+nnoremap <silent> <Leader>f :Rg<CR>
 
 
 "------------------------------------------------------------------
@@ -358,13 +361,12 @@ endif
 "VimPlug ...
 call plug#begin('~/.vim/plugged')
 
-Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox'
 Plug 'preservim/NERDTree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'derekwyatt/vim-scala'
+Plug 'bling/vim-airline'
 
 call plug#end()
 
@@ -376,6 +378,7 @@ syntax enable
 :set foldcolumn=0
 "set bg=light   " Setting light mode
 let g:gruvbox_contrast_dark = 'soft'
+let g:fzf_layout = { 'down': '~40%' }
 
 colorscheme gruvbox 
 
