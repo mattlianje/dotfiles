@@ -27,6 +27,7 @@ ACTIONS=(
     minikube
     node
     postgres
+    powerline-fonts
     python
     r
     ripgrep
