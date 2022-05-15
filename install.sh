@@ -49,7 +49,6 @@ ACTIONS=(
     iterm2
     rectangle
     slack
-    sublime
     virtualbox
     wireshark
 )
