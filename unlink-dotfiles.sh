@@ -16,6 +16,7 @@ DOTFILES=(
     vim
     git
     zsh
+    tmux
 )
 
 # Prompting sudo password
