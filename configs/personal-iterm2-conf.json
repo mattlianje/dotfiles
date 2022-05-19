@@ -17,7 +17,7 @@
     "Green Component" : 0.58534377813339233
   },
   "Guid" : "97F25ABE-CDE2-4372-AC2C-BC46B955588E",
-  "Normal Font" : "RobotoMonoForPowerline-Light 11",
+  "Normal Font" : "RobotoMonoForPowerline-Regular 11",
   "Bold Color" : {
     "Red Component" : 1,
     "Color Space" : "Calibrated",
@@ -42,6 +42,7 @@
   },
   "Rows" : 25,
   "Default Bookmark" : "No",
+  "Blend" : 0.050000000000000003,
   "Cursor Guide Color" : {
     "Red Component" : 0.17867125570774078,
     "Color Space" : "Calibrated",
@@ -99,6 +100,7 @@
   "Only The Default BG Color Uses Transparency" : true,
   "Columns" : 80,
   "Idle Code" : 0,
+  "Background Image Mode" : 3,
   "Ansi 13 Color" : {
     "Red Component" : 0.78096956014633179,
     "Color Space" : "Calibrated",
@@ -108,7 +110,7 @@
   },
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
-  "Non Ascii Font" : "Monaco 12",
+  "Non Ascii Font" : "RobotoMonoForPowerline-Regular 12",
   "Vertical Spacing" : 1,
   "Use Bold Font" : true,
   "Option Key Sends" : 0,
@@ -120,11 +122,11 @@
     "Green Component" : 0.2891082763671875
   },
   "Background Color" : {
-    "Red Component" : 0.18891620635986328,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.18707033062719347,
+    "Red Component" : 0.11759927868843079,
+    "Color Space" : "Calibrated",
+    "Blue Component" : 0.11759774386882782,
     "Alpha Component" : 1,
-    "Green Component" : 0.18707033062719347
+    "Green Component" : 0.11759573966264725
   },
   "Character Encoding" : 4,
   "Ansi 11 Color" : {
@@ -301,7 +303,6 @@
   "Window Type" : 0,
   "Blur Radius" : 3.7900151494773651,
   "Cursor Boost" : 0,
-  "Background Image Location" : "",
   "Blur" : true,
   "Badge Color" : {
     "Red Component" : 0.7928692102432251,
@@ -326,11 +327,11 @@
   },
   "Name" : "Default",
   "Cursor Text Color" : {
-    "Red Component" : 0.18823529411764706,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.18431372549019609,
+    "Red Component" : 0.11759927868843079,
+    "Color Space" : "Calibrated",
+    "Blue Component" : 0.11759774386882782,
     "Alpha Component" : 1,
-    "Green Component" : 0.18431372549019609
+    "Green Component" : 0.11759573966264725
   },
   "Shortcut" : "",
   "Cursor Color" : {
