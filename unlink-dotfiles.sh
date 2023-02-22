@@ -8,7 +8,10 @@
 #         Script to unlink personal dotfiles using GNU stow.
 # ------------------------------------------------------------------
 
-source echocolours
+# Colors for output
+GREEN='\033[0;32m'
+PINK='\033[1;35m'
+NC='\033[0m' # No Color
 
 cd ~/.dotfiles
 
@@ -26,7 +29,7 @@ sudo echo "Password prompted!"
 for FILE in ${DOTFILES[@]}
 do
   echo
-  log_info "Unlinking ${BOLD}${FILE}${NORMAL}..."
+  log_info "Unlinking ${PINK}${FILE}${NC}..."
   stow -D "${FILE}"
   if [ $? -eq 0 ]; then
     log_success "${FILE} successfully unlinked from ${HOME}/${FILE}"
