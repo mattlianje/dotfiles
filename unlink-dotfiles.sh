@@ -8,10 +8,8 @@
 #         Script to unlink personal dotfiles using GNU stow.
 # ------------------------------------------------------------------
 
-# Colors for output
-GREEN='\033[0;32m'
-PINK='\033[1;35m'
-NC='\033[0m' # No Color
+# Source commons
+source colours.sh
 
 cd ~/.dotfiles
 

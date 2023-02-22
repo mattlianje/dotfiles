@@ -7,6 +7,9 @@
 #         Personal UNIX-like setup for Darwin and Debian based machines.
 # -----------------------------------------------------------------------
 
+# Source commons
+source colours.sh
+
 # List of packages to install
 packages=(
     git
@@ -51,13 +54,6 @@ casks=(
     karabiner-elements
     slack
 )
-
-# Colors for output
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-PINK='\033[1;35m'
-NC='\033[0m' # No Color
 
 # Check the operating system and install packages
 if [[ $(uname) == "Darwin" ]]; then

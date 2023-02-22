@@ -8,11 +8,8 @@
 #         Script to symlink personal dotfiles using GNU stow.
 # -----------------------------------------------------------------------
 
-# Colors for output
-GREEN='\033[0;32m'
-PINK='\033[1;35m'
-NC='\033[0m' # No Color
-
+# Source commons
+source colours.sh
 
 echo "Creating ~/.dotfiles directory"
 mkdir ~/.dotfiles
