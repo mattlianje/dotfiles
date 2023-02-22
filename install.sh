@@ -1,94 +1,119 @@
 #!/bin/bash
 
-# ------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # [Author: Matthieu Court]
 # [E-mail: matthieu.court@protonmail.com]
 #
 #         Personal UNIX-like setup for Darwin and Debian based machines.
-# ------------------------------------------------------------------
+# -----------------------------------------------------------------------
 
-# You can define what will be installed.
-
-ACTIONS=(
-    # --- Pre-installation tasks ---
-    pre-install
-
-    # --- Packages ---
-    coursier
+# List of packages to install
+packages=(
+    git
+    vim
     curl
     fish
     fzf
-    git
     htop
-    java8
-    k8
     kubectl
     lolcat
-    minikube
     node
-    postgres
-    powerline-fonts
-    python
-    r
+    postgresql
+    pyenv
+    pipenv
+    jupyterlab
     ripgrep
     sbt
     scala
     stow
     tmux
     tree
-    vim
     wget
-
-    # --- Casks ---
-    brave
-    chrome
-    datagrip
-    docker
-    firefox
-    intellij-idea
-    iterm2
-    rectangle
-    slack
-    virtualbox
-    wireshark
+    apache-spark
+    apache-pulsar
+    kafka
+    lampepfl/brew/dotty
+    haskell-stack
+    openjdk@8
+    openjdk@11
 )
 
-source echocolours
+# List of casks to install (optional)
+casks=(
+    intellij-idea
+    brave-browser
+    datagrip
+    docker
+    iterm2
+    rectangle
+    sublime-text
+    wireshark
+    karabiner-elements
+    slack
+)
 
-echo "The following packages are going to be installed:"
-printf "\033[1m  %s\n\033[0m" "${ACTIONS[@]}"
-while true; do
-    read -p "Do you want to continue? [Y/n] " yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) echo -e "\nSkipping installation..."; exit;;
-	* ) echo "Please provide correct answer";;
-    esac
-done
+# Colors for output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+PINK='\033[1;35m'
+NC='\033[0m' # No Color
 
-# Prompting sudo password
-sudo echo "Password prompted!"
+# Check the operating system and install packages
+if [[ $(uname) == "Darwin" ]]; then
 
-# Installation process
-NOT_INSTALLED=()
-for PACKAGE in ${ACTIONS[@]}
-do
-  echo
-  log_info "Installing ${BOLD}${PACKAGE}${NORMAL}..."
-  bash "${PACKAGE}.sh"
-  if [ $? -eq 0 ]; then
-    log_success "Package ${BOLD}${PACKAGE}${NORMAL} successfully installed"
-  else
-    log_error "Failed to install ${BOLD}${PACKAGE}${NORMAL}!"
-    NOT_INSTALLED+=(${PACKAGE})
-  fi
-done
+    echo -e "${PINK}Installing Homebrew and ohmyzsh on macOS ...${NC}"
+    xcode-select --install
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Finishing
-echo -e "\n${BOLD}$((${#ACTIONS[@]} - ${#NOT_INSTALLED[@]}))${NORMAL} of ${BOLD}${#ACTIONS[@]}${NORMAL} packages were successfully installed."
-if [ ${#NOT_INSTALLED[@]} -ne 0 ]; then
-  log_warning "Packages that were not installed:"
-  printf "\033[1;31m  %s\n\033[0m" "${NOT_INSTALLED[@]}"
+    echo -e "${PINK}Installing Powerline fonts on macOS ...${NC}"
+    git clone https://github.com/powerline/fonts.git --depth=1
+    cd fonts
+    ./install.sh
+    cd ..
+    rm -rf fonts
+
+    echo -e "${GREEN}Installing packages on macOS...${NC}"
+    brew update
+    total_pkgs=${#packages[@]}
+    curr_pkg=0
+    for pkg in "${packages[@]}"; do
+        curr_pkg=$((curr_pkg + 1))
+        echo -e "${PINK}[$curr_pkg/$total_pkgs] Installing $pkg...${NC}"
+        brew install $pkg
+    done
+
+    echo -e "${PINK}Installing Python on macOS in a nice way...${NC}"
+    pyenv install $(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
+    pyenv global $(pyenv install --list | grep --extended-regexp "^\s*[0-9][0-9.]*[0-9]\s*$" | tail -1)
+
+    if [[ ${#casks[@]} -ne 0 ]]; then
+        echo -e "${GREEN}Installing casks on macOS...${NC}"
+        total_casks=${#casks[@]}
+        curr_cask=0
+        for cask in "${casks[@]}"; do
+            curr_cask=$((curr_cask + 1))
+            echo -e "${PINK}[$curr_cask/$total_casks] Installing $cask...${NC}"
+            brew install --cask $cask
+        done
+    fi
+elif [[ $(uname) == "Linux" ]]; then
+    echo -e "${GREEN}Installing packages on Ubuntu...${NC}"
+    sudo apt-get update
+    total_pkgs=${#packages[@]}
+    curr_pkg=0
+    for pkg in "${packages[@]}"; do
+        curr_pkg=$((curr_pkg + 1))
+        echo -e "${BLUE}[$curr_pkg/$total_pkgs] Installing $pkg...${NC}"
+        sudo apt-get install -y $pkg
+    done
+    echo -e "${BLUE}Installing Python in a less than nice way...${NC}"
+    sudo apt-get install -y python3
+else
+    echo -e "${YELLOW}Unsupported operating system.${NC}"
+    exit 1
 fi
-echo "Installation finished."
 
+# Print installation complete message
+echo -e "${GREEN}Installation complete!${NC}"
