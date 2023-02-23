@@ -49,7 +49,7 @@ function clean_home {
 function clean_directory {
     local dir="$1"
 
-    echo -e "${PINK}Doing a spring cleaning of $dir...${NC}"
+    echo -e "${PINK}🌸 Doing a spring cleaning of $dir... ${NC}"
     cd "$dir"
 
       # Remove any broken symbolic links in the Desktop directory
@@ -81,7 +81,7 @@ function clean_directory {
     # Remove any remaining empty directories
     find ${dir} -type d -empty -delete
 
-    echo -e "${GREEN}${dir} directory cleanup complete!${NC}"
+    echo -e "${GREEN}${dir} cleanup complete!${NC}"
 }
 
 #
@@ -97,4 +97,4 @@ clean_directory "$HOME/Documents"
 # clean_home
 # clean_directory "$HOME/SpringCleaning"
 
-echo -e "${GREEN}Cleanup complete!${NC}"
+echo -e "${GREEN}🧼 Cleanup complete!${NC}"
