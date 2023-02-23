@@ -8,15 +8,10 @@ Personal setup for MacOS or Debian based machines.
  ~/setup > sh install.sh
 ```
 
-🔗 **Symlinks/refreshes your dotfiles** to the user's home directory using GNU stow
+🔗 **Symlinks/refreshes/unlinks your dotfiles** to the user's home directory using GNU stow
 
 ```shell
  ~/setup > sh symlink-dotfiles.sh
-```
-
-🛑 **Unlinks your dotfiles** in user's home directory using GNU stow
-
-```shell
  ~/setup > sh unlink-dotfiles.sh
 ```
 
