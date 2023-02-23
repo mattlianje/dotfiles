@@ -27,7 +27,8 @@ sh unlink-dotfiles.sh
 
 E.g.
 ```shell
- ~/Desktop > tree
+# Before
+~/Desktop > tree
 .
 ├── 6pqm72.jpg
 ├── AP311_CustomerList-MW-NTL (1).docx
@@ -35,8 +36,8 @@ E.g.
 ├── cgoban.dmg
 └── test.mp4
 
-0 directories, 5 files
- ~/Desktop > tree
+# After
+~/Desktop > tree
 .
 ├── Documents
 │   └── AP311_CustomerList-MW-NTL (1).docx
