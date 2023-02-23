@@ -53,11 +53,11 @@ function clean_directory {
     cd "$dir"
 
       # Remove any broken symbolic links in the Desktop directory
-    echo -e "${PINK}Cleaning up broken symbolic links in ${dir}...${NC}"
+    echo -e "Cleaning up broken symbolic links in ${dir}..."
     find ${dir} -type l -exec sh -c "file -b {} | grep -q ^broken" \; -print0 | xargs -0 rm
 
     # Move files to appropriate folders
-    echo -e "${PINK}Moving files to appropriate folders...${NC}"
+    echo -e "Moving files to appropriate folders..."
     mkdir -p ${dir}/Images ${dir}/Documents ${dir}/Music ${dir}/Videos ${dir}/Archives ${dir}/Misc
 
     # Move image files to Images folder
