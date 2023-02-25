@@ -25,24 +25,22 @@ E.g.
 # Before
 ~/Desktop > tree
 .
-├── 6pqm72.jpg
-├── AP311_CustomerList-MW-NTL (1).docx
-├── _Its_A_Long_Way_To_Tipperary_.mp3
-├── cgoban.dmg
-└── test.mp4
+├── Marengo.jpg
+├── Jena.docx
+├── Austerlitz.mp3
+├── Arcole.dmg
+└── Rivoli.mp4
 
 # After
 ~/Desktop > tree
 .
 ├── Documents
-│   └── AP311_CustomerList-MW-NTL (1).docx
+│   └── Jena.docx
 ├── Images
-│   └── 6pqm72.jpg
+│   └── Marengo.jpg
 ├── Misc
-│   └── cgoban.dmg
+│   └── Arcole.dmg
 ├── Music
-│   └── _Its_A_Long_Way_To_Tipperary_.mp3
+│   └── Austerlitz.mp3
 └── Videos
-    └── test.mp4
-    
-5 directories, 5 files
+    └── Rivoli.mp4
