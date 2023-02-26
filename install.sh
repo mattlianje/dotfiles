@@ -48,7 +48,7 @@ casks=(
     datagrip
     docker
     iterm2
-    rectangle
+    amethyst
     sublime-text
     wireshark
     karabiner-elements
