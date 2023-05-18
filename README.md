@@ -2,20 +2,28 @@
 
 Personal setup for MacOS or Debian based machines. 
 
-📥 **Installs your packages** after a simple OS deduction using Homebrew or APT 
+**Installation**
+To install your packages based on the operating system type (MacOS or Debian-based), execute the install.sh script:
 
 ```shell
  ~/setup > sh install.sh
 ```
 
-🔗 **Symlinks/refreshes/unlinks your dotfiles** to the user's home directory using GNU stow
+**Dotfile Management**
+Use GNU stow to symlink, refresh, or unlink your dotfiles in the user's home directory
 
+- To symlink/refresh your dotfiles:
 ```shell
  ~/setup > sh symlink-dotfiles.sh
+ ```
+
+ - To unlink your dotfiles:
+ ```shell
  ~/setup > sh unlink-dotfiles.sh
 ```
 
-🧼🌸 **Cleans directories** of your choice
+**Directory Cleaning** 
+To clean directories of your choice, use the spring-clean-directories.sh script:
 ```shell
  ~/setup > sh spring-clean-directories.sh
 ```
