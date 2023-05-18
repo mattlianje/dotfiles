@@ -3,6 +3,7 @@
 Personal setup for MacOS or Debian based machines. 
 
 **Installation**
+
 To install your packages based on the operating system type (MacOS or Debian-based), execute the install.sh script:
 
 ```shell
@@ -10,6 +11,7 @@ To install your packages based on the operating system type (MacOS or Debian-bas
 ```
 
 **Dotfile Management**
+
 Use GNU stow to symlink, refresh, or unlink your dotfiles in the user's home directory
 
 - To symlink/refresh your dotfiles:
@@ -23,7 +25,9 @@ Use GNU stow to symlink, refresh, or unlink your dotfiles in the user's home dir
 ```
 
 **Directory Cleaning** 
+
 To clean directories of your choice, use the spring-clean-directories.sh script:
+
 ```shell
  ~/setup > sh spring-clean-directories.sh
 ```
