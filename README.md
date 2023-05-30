@@ -1,7 +1,7 @@
 # dotfiles
 Repo for the dotfiles and setup scripts I use.
 
-![mint wallpaper](pics/mint-wallpaper.png)
+![mint wallpaper](pics/mint-wallpaper-2.png)
 
 # tools
 ```
