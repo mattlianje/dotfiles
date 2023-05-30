@@ -1,10 +1,22 @@
-# *NIX system setup 
+# dotfiles
+Repo for the dotfiles and setup scripts I use.
 
-Personal setup for MacOS or Debian based machines. 
+# tools
+```
+application launcher    — rofi
+terminal emulator       - gnome-terminal 
+window manager          — i3
+status bar              — i3status
+shell                   — z-shell
+text editor             — nvim
+terminal multiplexer    — tmux
+file manger             — vifm
+document viewer         — zathura
+```
 
-## Spring cleaning 🧼🌸
+## spring cleaning 🧼🌸
 ```shell
- ~/> sh spring-clean-directories.sh
+ sh spring-clean-directories.sh
 ```
 
 E.g.
