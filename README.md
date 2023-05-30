@@ -1,6 +1,8 @@
 # dotfiles
 Repo for the dotfiles and setup scripts I use.
 
+![mint wallpaper](pics/mint-wallpaper.png)
+
 # tools
 ```
 application launcher    — rofi
