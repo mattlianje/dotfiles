@@ -16,7 +16,7 @@ file manger             — vifm
 document viewer         — zathura
 ```
 
-## spring cleaning 🧼🌸
+# spring cleaning 🧼🌸
 ```shell
  sh spring-clean-directories.sh
 ```
