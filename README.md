@@ -20,7 +20,7 @@ music player            — cmus
 
 # spring cleaning 🧼🌸
 ```shell
- sh spring-clean-directories.sh
+ ./spring-clean-directories.sh
 ```
 
 E.g.
