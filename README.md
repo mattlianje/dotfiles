@@ -18,7 +18,7 @@ document viewer         — zathura
 music player            — cmus
 ```
 
-# spring cleaning 🧼🌸
+# spring cleaning
 ```shell
  ./spring-clean-directories.sh
 ```
