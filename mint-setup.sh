@@ -19,6 +19,8 @@ packages=(
   feh
   i3blocks
   brightnessctl
+  ncspot
+  dunst
 )
 
 for package in "${packages[@]}"; do
