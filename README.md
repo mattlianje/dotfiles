@@ -15,6 +15,8 @@ text editor             — nvim
 terminal multiplexer    — tmux
 file manger             — vifm
 document viewer         — zathura
+notification daemon     — dunst
+music player            — cmus/ncspot
 ```
 
 # spring cleaning 🧼🌸
