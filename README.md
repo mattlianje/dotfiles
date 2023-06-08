@@ -7,10 +7,10 @@ Repo for the dotfiles and setup scripts I use.
 # tools
 ```
 application launcher    — rofi
-terminal emulator       - gnome-terminal 
+terminal emulator       — alacritty 
 window manager          — i3
-status bar              — i3status
-shell                   — z-shell
+status bar              — i3blocks
+shell                   — bash
 text editor             — nvim
 terminal multiplexer    — tmux
 file manger             — vifm
@@ -19,9 +19,9 @@ notification daemon     — dunst
 music player            — cmus/ncspot
 ```
 
-# spring cleaning 🧼🌸
+# spring cleaning
 ```shell
- sh spring-clean-directories.sh
+ ./spring-clean-directories.sh
 ```
 
 E.g.
