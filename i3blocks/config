@@ -2,8 +2,8 @@
 
 # Shows the battery percentage
 [battery]
-label=BAT
-command=/usr/share/i3blocks/battery
+label=BAT(S)-
+command=$HOME/github/dotfiles/i3blocks/battery.sh
 interval=5
 
 # Shows the wifi signal strength
@@ -20,25 +20,25 @@ interval=5
 
 # Shows total ram percentage
 [ram]
-command=$HOME/setup_scripts/system_status.sh ram
+command=$HOME/github/dotfiles/i3blocks/system_status.sh ram
 interval=5
 
 # Shows total CPU percentage
 [cpu]
-command=$HOME/setup_scripts/system_status.sh cpu
+command=$HOME/github/dotfiles/i3blocks/system_status.sh cpu
 interval=5
 
 # Shows the top 10 CPU processes when clicked
 [top_cpu]
 label=CPU
-command=$HOME/setup_scripts/top_cpu.sh
+command=$HOME/github/dotfiles/i3blocks/top_cpu.sh
 interval=10
 signal=10
 
 # Shows the top 10 RAM processes when clicked
 [top_ram]
 label=RAM
-command=$HOME/setup_scripts/top_ram.sh
+command=$HOME/github/dotfiles/i3blocks/top_ram.sh
 interval=10
 signal=12
 
@@ -50,18 +50,18 @@ interval=1
 
 # Right click for brightness down, left click for brightness up
 [brightness]
-command=$HOME/setup_scripts/brightness.sh
+command=$HOME/github/dotfiles/i3blocks/brightness.sh
 interval=1
 signal=10
 
 # Right click for volume down - left click for volume up 
 [volume]
-command=$HOME/setup_scripts/volume.sh
+command=$HOME/github/dotfiles/i3blocks/volume.sh
 interval=1
 signal=10
 
 # Opens system preferences on signal
 [sys_prefs]
-command=$HOME/setup_scripts/open_prefs.sh
+command=$HOME/github/dotfiles/i3blocks/open_prefs.sh
 interval=once
 signal=1
