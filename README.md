@@ -7,7 +7,8 @@ Repo for the dotfiles and setup scripts I use.
 # tools
 ```
 application launcher    — rofi
-terminal emulator       — alacritty 
+terminal emulator       — kitty 
+compositor 		— compton
 window manager          — i3
 status bar              — i3blocks
 shell                   — bash
