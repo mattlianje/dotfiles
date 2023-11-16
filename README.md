@@ -8,7 +8,8 @@ Repo for the dotfiles and setup scripts I use.
 ```
 application launcher    — rofi
 terminal emulator       — kitty 
-compositor 		— compton
+compositor 	           	— compton
+colour-scheme generator — pywal
 window manager          — i3
 status bar              — i3blocks
 shell                   — bash
@@ -22,12 +23,6 @@ music player            — cmus/ncspot
 
 # spring cleaning
 ```shell
- ./spring-clean-directories.sh
-```
-
-E.g.
-```shell
-# Before
 ~/Desktop > tree
 .
 ├── Marengo.jpg
@@ -36,7 +31,7 @@ E.g.
 ├── Arcole.dmg
 └── Rivoli.mp4
 
-# After
+~/Desktop > ./spring-clean-directories.sh
 ~/Desktop > tree
 .
 ├── Documents
@@ -49,3 +44,4 @@ E.g.
 │   └── Austerlitz.mp3
 └── Videos
     └── Rivoli.mp4
+```
