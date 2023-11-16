@@ -8,7 +8,7 @@ Repo for the dotfiles and setup scripts I use.
 ```
 application launcher    — rofi
 terminal emulator       — kitty 
-compositor 	           	— compton
+compositor              — compton
 colour-scheme generator — pywal
 window manager          — i3
 status bar              — i3blocks
