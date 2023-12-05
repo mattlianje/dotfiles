@@ -31,7 +31,7 @@ music player            — cmus/ncspot
 ├── Arcole.dmg
 └── Rivoli.mp4
 
-~/Desktop > ./spring-clean-directories.sh
+~/Desktop > ./clean.sh
 ~/Desktop > tree
 .
 ├── Documents
