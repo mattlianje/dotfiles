@@ -19,8 +19,25 @@ update_system() {
 
 install_packages() {
     local packages=(
-        brightnessctl cmus compton dunst feh git i3blocks kitty mpv
-        ncspot neovim polybar pip3 python3 rofi vim vifm zathura zsh
+        brightnessctl
+        cmus
+        compton
+        dunst
+        feh
+        git
+        i3blocks
+        kitty
+        mpv
+        ncspot
+        neovim
+        polybar
+        pip3
+        python3
+        rofi
+        vim
+        vifm
+        zathura
+        zsh
     )
 
     for package in "${packages[@]}"; do
@@ -33,7 +50,9 @@ install_packages() {
 }
 
 install_python_packages() {
-    local python_packages=(pywal)
+    local python_packages=(
+        pywal
+    )
 
     for package in "${python_packages[@]}"; do
         echo -e "${GREEN}***** Installing pip packages: ${package} *****${NC}"
