@@ -61,13 +61,29 @@ clean_directory() {
 # Wizard for cleaning
 cleaning_wizard() {
     echo -e "${BLUE}Cleaning options:${NC}"
-    echo "1. Specific directory 2. Default dirs 3. Current dir ($(pwd))"
-    read -p "Choice (1/2/3): " choice
+    echo "1. Clean a specific directory"
+    echo "2. Clean Default directories (Desktop, Downloads, Documents)"
+    echo "3. Clean the current directory ($(pwd))"
+    read -p "Enter your choice (1/2/3): " choice
+
     case $choice in
-        1) read -p "Directory: " dir; clean_directory "$dir" ;;
-        2) for dir in Desktop Downloads Documents; do clean_directory "$HOME/$dir"; done ;;
-        3) clean_directory "$(pwd)" ;;
-        *) echo -e "${RED}Invalid choice.${NC}"; exit 1 ;;
+        1)
+            read -p "Enter the directory to clean: " dir
+            clean_directory "$dir"
+            ;;
+        2)
+            echo -e "${PINK}Cleaning Default directories: Desktop, Downloads, Documents${NC}"
+            for dir in Desktop Downloads Documents; do
+                clean_directory "$HOME/$dir"
+            done
+            ;;
+        3)
+            clean_directory "$(pwd)"
+            ;;
+        *)
+            echo -e "${RED}Invalid choice. Exiting.${NC}"
+            exit 1
+            ;;
     esac
 }
 
