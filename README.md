@@ -3,6 +3,8 @@ Repo for the dotfiles and setup scripts I use.
 
 ![mint wallpaper](pics/mint_machine_clean.png)
 ![mint wallpaper busy](pics/mint_machine_busy.png)
+![mint pywal wallpapers](pics/desktop.gif)
+
 
 # tools
 ```
