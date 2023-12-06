@@ -1,6 +1,7 @@
 # dotfiles
 Repo for the dotfiles and setup scripts I use.
 
+![mint_clean](pics/mint_machine_clean.png)
 ![mint pywal wallpapers](pics/desktop.gif)
 
 # tools
