@@ -3,7 +3,7 @@ Repo for the dotfiles and setup scripts I use.
 
 ![mint wallpaper](pics/mint_machine_clean.png)
 ![mint wallpaper busy](pics/mint_machine_busy.png)
-![mint pywal wallpapers](pics/desktop.gif)
+![mint wallpaper pywal napoleon](pics/armee-dorient.png)
 
 
 # tools
@@ -14,7 +14,7 @@ compositor 		— compton
 window manager          — i3
 status bar              — i3blocks
 shell                   — bash
-text editor             — nvim
+text editor             — vim
 terminal multiplexer    — tmux
 file manger             — vifm
 document viewer         — zathura
