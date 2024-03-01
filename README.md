@@ -1,8 +1,8 @@
 # dotfiles
 Repo for the dotfiles and setup scripts I use.
 
-![mint_clean](pics/mint_machine_clean.png)
-![mint pywal wallpapers](pics/desktop.gif)
+![mint wallpaper](pics/mint_machine_clean.png)
+![mint wallpaper pywal napoleon](pics/armee-dorient.png)
 
 # tools
 ```
@@ -13,7 +13,7 @@ colour-scheme generator — pywal
 window manager          — i3
 status bar              — i3blocks
 shell                   — bash
-text editor             — nvim
+text editor             — vim
 terminal multiplexer    — tmux
 file manger             — vifm
 document viewer         — zathura
