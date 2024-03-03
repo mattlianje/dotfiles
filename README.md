@@ -2,19 +2,18 @@
 Repo for the dotfiles and setup scripts I use.
 
 ![mint wallpaper](pics/mint_machine_clean.png)
-![mint wallpaper busy](pics/mint_machine_busy.png)
-![mint pywal wallpapers](pics/desktop.gif)
-
+![mint wallpaper pywal napoleon](pics/armee-dorient.png)
 
 # tools
 ```
 application launcher    — rofi
 terminal emulator       — kitty 
-compositor 		— compton
+compositor              — compton
+colour-scheme generator — pywal
 window manager          — i3
 status bar              — i3blocks
 shell                   — bash
-text editor             — nvim
+text editor             — vim
 terminal multiplexer    — tmux
 file manger             — vifm
 document viewer         — zathura
@@ -24,12 +23,6 @@ music player            — cmus/ncspot
 
 # spring cleaning
 ```shell
- ./spring-clean-directories.sh
-```
-
-E.g.
-```shell
-# Before
 ~/Desktop > tree
 .
 ├── Marengo.jpg
@@ -38,7 +31,7 @@ E.g.
 ├── Arcole.dmg
 └── Rivoli.mp4
 
-# After
+~/Desktop > ./clean.sh
 ~/Desktop > tree
 .
 ├── Documents
@@ -51,3 +44,4 @@ E.g.
 │   └── Austerlitz.mp3
 └── Videos
     └── Rivoli.mp4
+```
