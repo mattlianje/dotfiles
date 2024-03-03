@@ -1,10 +1,9 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
+" Maintainer:
 " Matthieu Court — matthieu.court@protonmail.com
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key remaps general confs
@@ -15,7 +14,7 @@ set history=500
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set ignorecase " Ignore case when searching
-set smartcase " When searching try to be smart about cases 
+set smartcase " When searching try to be smart about cases
 set hlsearch " Highlight search results
 set incsearch " Makes search act like search in modern browsers
 set lazyredraw " Don't redraw while executing macros (good performance config)
@@ -70,25 +69,38 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 nnoremap <silent> <C-p> :Files<CR>
 
 " Finding it more pleasant to not open NerdTree on run
+let NERDTreeWinSize=65
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Use ripgrep to search inside a file with LEADER+f
 " Note: ripgrep must be installed
 nnoremap <silent> <Leader>f :Rg<CR>
 
+" Open terminal below
+nnoremap <silent> <Leader>t :below terminal<CR>
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
+" => Misc / Buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
 
 " Quickly open a markdown buffer for scribble
-map <leader>x :e ~/buffer.md<cr>
+" Of couse we are using my org-mode like ZOB tool
+map <leader>n :tabe ~/zob/buffer.md<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+" Show all buffers
+nnoremap <Leader>b :ls<CR>:b<Space>
+
+" move among buffers with CTRL
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+
+" move among tabs with CTRL
+map <C-H> gT
+map <C-L> gt
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -124,7 +136,7 @@ endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugins using VimPlug 
+" => Plugins using VimPlug
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight VertSplit cterm=NONE
 
@@ -177,11 +189,6 @@ autocmd BufWinEnter *.* silent loadview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colour schemes & other visuals
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 :set showtabline=1
 " turn hybrid line / relative lines
 :set number relativenumber
@@ -196,5 +203,6 @@ set background=dark   " Ensure dark mode is set
 let g:gruvbox_contrast_dark = 'soft'
 let g:fzf_layout = { 'down': '~40%' }
 
-colorscheme darcula
+" colorscheme darcula
+colorscheme gruvbox
 
