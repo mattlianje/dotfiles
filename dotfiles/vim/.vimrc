@@ -41,15 +41,20 @@ endif
 
 set encoding=utf8 " Set utf8 as standard encoding and en_US as the standard language
 set ffs=unix,dos,mac " Use Unix as the standard file type
+
+set list
+set listchars=multispace:\ \ ┊
 set expandtab " Use spaces instead of tabs
 set smarttab " Be smart when using tabs ;)
-set shiftwidth=4 " 1 tab == 4 spaces
-set tabstop=4
+set shiftwidth=5 " 1 tab == 4 spaces
+set tabstop=5
+
 set lbr " Linebreak on 500 characters
 set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
 
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -204,5 +209,5 @@ let g:gruvbox_contrast_dark = 'soft'
 let g:fzf_layout = { 'down': '~40%' }
 
 " colorscheme darcula
-colorscheme gruvbox
+colorscheme evening
 
