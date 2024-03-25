@@ -20,28 +20,3 @@ document viewer         — zathura
 notification daemon     — dunst
 music player            — cmus/ncspot
 ```
-
-# spring cleaning
-```shell
-~/Desktop > tree
-.
-├── Marengo.jpg
-├── Jena.docx
-├── Austerlitz.mp3
-├── Arcole.dmg
-└── Rivoli.mp4
-
-~/Desktop > ./clean.sh
-~/Desktop > tree
-.
-├── Documents
-│   └── Jena.docx
-├── Images
-│   └── Marengo.jpg
-├── Misc
-│   └── Arcole.dmg
-├── Music
-│   └── Austerlitz.mp3
-└── Videos
-    └── Rivoli.mp4
-```
