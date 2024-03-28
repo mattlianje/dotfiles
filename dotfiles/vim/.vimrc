@@ -1,4 +1,3 @@
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
 " Matthieu Court — matthieu.court@protonmail.com
@@ -74,8 +73,8 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 nnoremap <silent> <C-p> :Files<CR>
 
 " Finding it more pleasant to not open NerdTree on run
-let NERDTreeWinSize=65
-nnoremap <C-t> :NERDTreeToggle<CR>
+"let NERDTreeWinSize=65
+"nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Use ripgrep to search inside a file with LEADER+f
 " Note: ripgrep must be installed
@@ -84,6 +83,15 @@ nnoremap <silent> <Leader>f :Rg<CR>
 " Open terminal below
 nnoremap <silent> <Leader>t :below terminal<CR>
 
+" NerdTree has been canned
+nnoremap <C-t> :Lexplore<CR>
+let g:netrw_winsize = 25 " Set netrw window size
+let g:netrw_browse_split = 4 " Open netrw in a vertical split by default
+let g:netrw_mouse = 1 " Enable mouse support in netrw
+let g:netrw_banner = 0 " Set the banner to 0 to disable the banner
+let g:netrw_liststyle = 3 " Enable tree view by default
+let g:netrw_altv = 1 " Open netrw files in new tabs
+set fillchars+=vert:\
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc / Buffers
@@ -208,6 +216,6 @@ set background=dark   " Ensure dark mode is set
 let g:gruvbox_contrast_dark = 'soft'
 let g:fzf_layout = { 'down': '~40%' }
 
-" colorscheme darcula
+"colorscheme darcula
 colorscheme evening
 
