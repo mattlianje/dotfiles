@@ -82,10 +82,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left 20px
-bindsym $mod+Shift+Down move down 20px
-bindsym $mod+Shift+Up move up 20px
-bindsym $mod+Shift+Right move right 20px
+bindsym $mod+Shift+Left move left 40px
+bindsym $mod+Shift+Down move down 40px
+bindsym $mod+Shift+Up move up 40px
+bindsym $mod+Shift+Right move right 40px
 
 # split in horizontal orientation
 bindsym $mod+c split h
@@ -103,6 +103,9 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+
+# sticky toggle
+bindsym $mod+Shift+s sticky toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -183,7 +186,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
- 
+
 
 # Better way of resizing
 bindsym $mod+Shift+y resize shrink width 10 px or 10 ppt
@@ -193,14 +196,17 @@ bindsym $mod+Shift+o resize grow width 10 px or 10 ppt
 
 # Personal customizations
 gaps inner 20px
-gaps outer 20px 
+gaps outer 20px
 
 # Set the wallpaper
-exec_always feh --bg-fill ~/wallpaper/wallhaven-hobbiton.jpg
-exec_always wal -i ~/wallpaper/wallhaven-hobbiton.jpg
+exec_always feh --bg-fill ~/.wallpaper/wallhaven-hobbiton.jpg ~/.wallpaper/wallhaven-hobbiton.jpg
+exec_always wal -i ~/.wallpaper/wallhaven-hobbiton.jpg
+
+# Set multi-monitor
+exec_always xrandr --output HDMI-2 --auto --left-of eDP-1
 
 # Keybing i3lock
-#bindsym $mod+l exec i3lock
+bindsym $mod+Shift+x exec i3lock --color=a4a4ff
 
 # No real window borders for me
 default_border pixel 5
@@ -218,7 +224,7 @@ bar {
 	status_command i3blocks
         #status_command i3status
 	position top
-	font pango: Ubuntu Regular 8
+	font pango: Ubuntu Regular 9
 	colors {
 		background #000000
 		statusline #ffffff
@@ -231,5 +237,19 @@ bar {
 exec_always --no-startup-id compton
 
 # Key to toggle wallpaper w/ pywal
-bindsym $mod+Shift+w exec wal -i ~/wallpaper/ --iterative
+bindsym $mod+Shift+w exec wal -i ~/.wallpaper/ --iterative
+
+# Floating terminal for R calculator
+# Keybinding to open a floating terminal with larger font and R session
+bindsym $mod+n exec --no-startup-id ~/.scripts/r_calculator.sh
+
+for_window [class="kitty" instance="r_calculator"] floating enable, move position center, resize set 800 600
+
+# Make all dialog windows floating
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="utility"] floating enable
+for_window [window_type="notification"] floating enable
+for_window [window_type="toolbar"] floating enable
 
