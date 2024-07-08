@@ -1,12 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer:
 " Matthieu Court — matthieu.court@protonmail.com
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key remaps general confs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=500
 
 set backspace=eol,start,indent
@@ -52,66 +48,36 @@ set wrap "Wrap lines
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Status Line
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set laststatus=2 " Always show the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c " Format the status line
+set laststatus=2 
+set statusline=%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c 
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use fzf to search files with CTRL+p
+" => General
 nnoremap <silent> <C-p> :Files<CR>
-
-" Finding it more pleasant to not open NerdTree on run
-"let NERDTreeWinSize=65
-"nnoremap <C-t> :NERDTreeToggle<CR>
-
-" Use ripgrep to search inside a file with LEADER+f
-" Note: ripgrep must be installed
 nnoremap <silent> <Leader>f :Rg<CR>
-
-" Open terminal below
 nnoremap <silent> <Leader>t :below terminal<CR>
 
 " NerdTree has been canned
 nnoremap <C-t> :Lexplore<CR>
-let g:netrw_winsize = 25 " Set netrw window size
-let g:netrw_browse_split = 4 " Open netrw in a vertical split by default
-let g:netrw_mouse = 1 " Enable mouse support in netrw
-let g:netrw_banner = 0 " Set the banner to 0 to disable the banner
-let g:netrw_liststyle = 3 " Enable tree view by default
-let g:netrw_altv = 1 " Open netrw files in new tabs
+let g:netrw_winsize = 25 
+let g:netrw_browse_split = 4 
+let g:netrw_mouse = 1 
+let g:netrw_banner = 0 
+let g:netrw_liststyle = 3 
+let g:netrw_altv = 1 
 set fillchars+=vert:\
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc / Buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Quickly open a markdown buffer for scribble
 " Of couse we are using my org-mode like ZOB tool
 map <leader>n :tabe ~/zob/buffer.md<cr>
-
-" Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-
-" Show all buffers
 nnoremap <Leader>b :ls<CR>:b<Space>
-
-" move among buffers with CTRL
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
-
-" move among tabs with CTRL
 map <C-H> gT
 map <C-L> gt
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
@@ -141,9 +107,7 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins using VimPlug
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight VertSplit cterm=NONE
 
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -163,16 +127,11 @@ Plug 'bling/vim-airline'
 
 call plug#end()
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mouse settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => To paste correctly with tmux
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if &term =~ "screen"
     let &t_BE = "\e[?2004h"
     let &t_BD = "\e[?2004l"
@@ -180,22 +139,16 @@ if &term =~ "screen"
     exec "set t_PE=\e[201~"
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Automatically save and load folds for all filtetypes
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colour schemes & other visuals
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :set showtabline=1
-" turn hybrid line / relative lines
 :set number relativenumber
 :set nu rnu
 :set pastetoggle=<F2>
-
 set termguicolors
 
 syntax enable
@@ -203,7 +156,4 @@ set foldcolumn=0
 set background=dark   " Ensure dark mode is set
 let g:gruvbox_contrast_dark = 'soft'
 let g:fzf_layout = { 'down': '~40%' }
-
-"colorscheme darcula
-"colorscheme evening
 
