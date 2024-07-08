@@ -9,19 +9,17 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set history=500
 
-" Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-set ignorecase " Ignore case when searching
-set smartcase " When searching try to be smart about cases
-set hlsearch " Highlight search results
-set incsearch " Makes search act like search in modern browsers
-set lazyredraw " Don't redraw while executing macros (good performance config)
-set magic " For regular expressions turn magic on
-set showmatch " Show matching brackets when text indicator is over them
-set mat=2 " How many tenths of a second to blink when matching brackets
+set ignorecase 
+set smartcase 
+set hlsearch 
+set incsearch 
+set lazyredraw 
+set magic 
+set showmatch 
+set mat=2 
 
-" No annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
@@ -38,24 +36,19 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-set encoding=utf8 " Set utf8 as standard encoding and en_US as the standard language
-set ffs=unix,dos,mac " Use Unix as the standard file type
+set encoding=utf8 
+set ffs=unix,dos,mac 
 
 set list
-set listchars=multispace:\ \ ┊
-set expandtab " Use spaces instead of tabs
-set smarttab " Be smart when using tabs ;)
-set shiftwidth=5 " 1 tab == 4 spaces
-set tabstop=5
 
-set lbr " Linebreak on 500 characters
+set lbr 
 set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
 
-" Return to last edit position when opening files (You want this!)
+" Return to last edit position when opening files 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 
@@ -162,11 +155,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'kyoz/purify', { 'rtp': 'vim' }
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'doums/darcula'
-Plug 'ajmwagar/vim-deus'
-Plug 'tomasr/molokai'
-Plug 'morhetz/gruvbox'
 Plug 'preservim/NERDTree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -217,5 +205,5 @@ let g:gruvbox_contrast_dark = 'soft'
 let g:fzf_layout = { 'down': '~40%' }
 
 "colorscheme darcula
-colorscheme evening
+"colorscheme evening
 
