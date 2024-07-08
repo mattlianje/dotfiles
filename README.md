@@ -1,8 +1,8 @@
 # dotfiles
-Repo for the dotfiles and setup scripts I use.
+Repo for the dotfiles and configs I use.
 
-![mint wallpaper](pics/mint_machine_clean.png)
-![mint wallpaper pywal napoleon](pics/armee-dorient.png)
+![nixos wallpaper](pics/space-odyssey-clean.png)
+![nixos wallpaper busy](pics/space-odyssey-busy.png)
 
 # tools
 ```
