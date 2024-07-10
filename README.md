@@ -1,8 +1,8 @@
 # dotfiles
 Repo for the dotfiles and configs I use.
 
-![nixos wallpaper](pics/space-odyssey-clean.png)
-![nixos wallpaper busy](pics/space-odyssey-busy.png)
+![nixos wallpaper](pics/hobbiton-clean.png)
+![nixos wallpaper busy](pics/hobbiton-busy.png)
 
 # tools
 ```
