@@ -13,7 +13,7 @@ colour-scheme generator — pywal
 window manager          — i3
 status bar              — i3blocks
 shell                   — bash
-text editor             — vim
+text editor             — vim / emacs
 terminal multiplexer    — tmux
 file manger             — vifm
 document viewer         — zathura
