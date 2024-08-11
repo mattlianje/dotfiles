@@ -182,28 +182,25 @@
 
 ;; Dired Sidebar
 ;; -------------
-(use-package all-the-icons
-  :ensure t)
-
-(use-package all-the-icons-dired
-  :ensure t
-  :hook (dired-mode . all-the-icons-dired-mode))
-
 (use-package dired-sidebar
   :ensure t
   :commands (dired-sidebar-toggle-sidebar)
   :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
   :config
-  (setq dired-sidebar-theme 'icons)
+  ;; Disable icons and custom fonts
+  (setq dired-sidebar-theme 'none) ; Ensure no themes are applied
+  ;;(setq dired-sidebar-use-custom-font t) ; Disable custom fonts
   (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-use-custom-font t)
-  (setq dired-sidebar-width 60)
+  (setq dired-sidebar-width 80) ; Increase the width to prevent wrapping
   (setq window-divider-default-right-width 1)
   (window-divider-mode 1)
   (setq dired-sidebar-show-hidden-files t)
-  (add-hook 'dired-sidebar-mode-hook (lambda ()
-                                       (define-key dired-sidebar-mode-map (kbd "<mouse-1>") 'dired-sidebar-find-file)
-                                       (define-key dired-sidebar-mode-map (kbd "<mouse-2>") 'dired-sidebar-find-file-other-window))))
+  (add-hook 'dired-sidebar-mode-hook
+            (lambda ()
+              (define-key dired-sidebar-mode-map (kbd "<mouse-1>") 'dired-sidebar-find-file)
+              (define-key dired-sidebar-mode-map (kbd "<mouse-2>") 'dired-sidebar-find-file-other-window)
+              (setq truncate-lines t) ; Prevent line wrapping
+              )))
 
 (setq dired-use-ls-dired nil)
 (setq dired-listing-switches "-alh")
