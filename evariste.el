@@ -1,4 +1,4 @@
-(deftheme evariste "A vibrant theme inspired by Vim's Evening color scheme with enhanced colors.")
+(deftheme evariste "Matthieu's colour scheme - named after Évariste Galois - inspired by VIM's 'evening' theme")
 
 (let ((class '((class color) (min-colors 89)))
       (bg "#343434") ;; Dark gray background
