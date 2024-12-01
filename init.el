@@ -14,7 +14,7 @@
 (setq use-package-always-ensure t)
 
 ;; Basic UI Settings
-;; -----------------
+;; ---------------------------
 (set-face-attribute 'default nil
                     :family "Iosevka"
                     :height 120
@@ -26,7 +26,7 @@
 (menu-bar-mode -1)
 
 ;; Theme Settings
-;; --------------
+;; ---------------------------
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'evariste t)
 
@@ -50,7 +50,7 @@
 (custom-set-faces)
 
 ;; General Visual Settings
-;; -----------------------
+;; ---------------------------
 (global-set-key (kbd "C-x C-b")
                 (lambda ()
                   (interactive)
@@ -59,7 +59,7 @@
                     (buffer-menu))))
 
 ;; Evil Mode Settings
-;; ------------------
+;; ---------------------------
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -77,7 +77,7 @@
   (evil-collection-init))
 
 ;; Vterm
-;; -----
+;; ---------------------------
 (use-package vterm
   :commands vterm
   :config
@@ -97,7 +97,7 @@
   (global-set-key (kbd "C-x C-t") 'toggle-vterm-at-bottom))
 
 ;; Magit
-;; -----
+;; ---------------------------
 (use-package magit
   :ensure t
   :commands (magit-status magit-blame)
@@ -106,14 +106,14 @@
   (global-set-key (kbd "C-x M-g") 'magit-blame))
 
 ;; Buffer Menu
-;; -----------
+;; ---------------------------
 (global-set-key (kbd "C-x C-b")
                 (lambda ()
                   (interactive)
                   (list-buffers)))
 
 ;; Projectile
-;; ----------
+;; ---------------------------
 (use-package projectile
   :init
   (setq projectile-completion-system 'ivy)
@@ -131,7 +131,7 @@
   :bind (("C-x p" . projectile-command-map)))
 
 ;; Ivy Mode 
-;; -------------------------------
+;; ---------------------------
 (use-package ivy
   :ensure t
   :diminish (ivy-mode)
@@ -167,21 +167,31 @@
 (setq ivy-initial-inputs-alist nil)
 
 ;; Line Numbers
-;; ------------
-(add-hook 'prog-mode-hook (lambda ()
-                            (setq display-line-numbers 'relative)
-                            (display-line-numbers-mode 1)))
+;; ---------------------------
+(setq display-line-numbers-type 'relative)
 
-(setq display-line-numbers 'relative)
+(defun my/display-line-numbers-conditional ()
+  "Turn on `display-line-numbers-mode' except in certain modes."
+  (unless (or (minibufferp) (derived-mode-p 'pdf-view-mode))
+    (display-line-numbers-mode 1)))
+
+;; Add the custom function to the `prog-mode-hook` and other relevant hooks
+(add-hook 'prog-mode-hook 'my/display-line-numbers-conditional)
+(add-hook 'text-mode-hook 'my/display-line-numbers-conditional)
+(add-hook 'conf-mode-hook 'my/display-line-numbers-conditional)
+
+;; Ensure that `pdf-view-mode` does not enable line numbers
+(add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
+
 
 ;; Prevent re-centering
-;; --------------------
+;; ---------------------------
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
 
 ;; Dired Sidebar
-;; -------------
+;; ---------------------------
 (use-package dired-sidebar
   :ensure t
   :commands (dired-sidebar-toggle-sidebar)
@@ -208,21 +218,6 @@
 (setq window-divider-default-bottom-width 1)
 (window-divider-mode t)
 
-;; Eglot setup
-;; -----------
-(use-package eglot
-  :ensure t
-  :hook ((prog-mode . eglot-ensure))
-  :bind (:map eglot-mode-map
-              ("C-c l t" . eglot-toggle))
-  :config
-  (defun eglot-toggle ()
-    "Toggle Eglot on and off."
-    (interactive)
-    (if eglot--managed-mode
-        (eglot-shutdown)
-      (eglot-ensure))))
-
 ;; PDF tools with Evil bindings
 ;; ---------------------------
 (use-package pdf-tools
@@ -240,6 +235,47 @@
     "gg" 'pdf-view-first-page
     "gt" 'pdf-view-next-page-command
     "gT" 'pdf-view-previous-page-command))
+
+;; Ivy Extras
+;; ---------------------------
+(use-package ivy-posframe
+  :ensure t
+  :custom
+  (ivy-posframe-display-functions-alist
+   '((counsel-fzf . ivy-posframe-display-at-frame-center)
+     (ivy-switch-buffer . ivy-posframe-display-at-frame-center)
+     (swiper . ivy-posframe-display-at-frame-center)
+     (t . ivy-posframe-display-at-frame-center)))
+  :config
+  (ivy-posframe-mode 1))
+
+  (custom-set-faces
+   '(ivy-posframe ((t (:background "#282c34" :foreground "#bbc2cf"))))
+   '(ivy-posframe-border ((t (:background "#51afef")))))
+  
+  (setq ivy-posframe-width 100)
+  (setq ivy-posframe-height 20)
+  
+  (setq ivy-format-function 'ivy-format-function-line))
+
+
+;; Ligature support
+;; -------------------------
+(use-package ligature
+  :ensure t
+  :config
+  (ligature-set-ligatures 't '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+                              ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+                              "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+                              "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+                              "/=" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+                              "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+                              "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+                              "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+                              "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+                              "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+  (global-ligature-mode 't))
+
 
 ;; Scale text in all buffers
 ;; -------------------------
