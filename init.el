@@ -256,7 +256,7 @@
   (setq ivy-posframe-width 100)
   (setq ivy-posframe-height 20)
   
-  (setq ivy-format-function 'ivy-format-function-line))
+  (setq ivy-format-function 'ivy-format-function-line)
 
 
 ;; Ligature support
