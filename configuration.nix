@@ -112,47 +112,75 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     curl
-     libgcc
-     git
-     vim
-     wget
-     htop
-     pywal
-     kitty
-     brave
-     fzf
-     inkscape
-     imagemagick
-     rustup
-     gcc
-     scala
-     scala-cli
-     python3
-     ripgrep
-     tmux
-     i3
-     i3blocks
-     neofetch
-     brightnessctl
-     ghc
-     feh
-     iosevka
-     vifm
-     rofi
-     picom
-     vscode
-     xclip
-     R
-     lm_sensors
-     taskwarrior
-     sqlite
-     newsboat
-     pandoc
-     texliveSmall
-     metals
-     zathura
-     tree
+  ### Core ###
+  curl
+  wget
+  git
+  vim
+  libgcc
+  gcc
+  htop
+  tree
+  ripgrep
+  xclip
+  lm_sensors
+  brightnessctl
+  gnupg
+
+  ### Term + shell ###
+  kitty
+  alacritty
+  tmux
+  neofetch
+
+  ### Windows / desktop ###
+  i3
+  i3blocks
+  rofi
+  picom
+  feh
+  pywal
+
+  ### Compilers / dev ###
+  gcc
+  python3
+  go
+  ghc
+  scala
+  clojure
+  R
+  rustup
+  scala-cli
+  metals
+  vscode
+  emacs
+
+  ### DB ###
+  sqlite
+  postgresql
+
+  ### File ###
+  fzf
+  vifm
+
+  ### Documents ###
+  pandoc
+  texliveSmall
+  zathura
+
+  ### Graphics ###
+  inkscape
+  imagemagick
+
+  ### Web & Communication ###
+  brave
+  newsboat
+
+  ### Fonts ###
+  iosevka
+
+  # Productivity
+  taskwarrior
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
