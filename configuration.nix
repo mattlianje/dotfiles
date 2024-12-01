@@ -147,12 +147,15 @@
   go
   ghc
   scala
+  scala-cli
+  sbt
   clojure
   R
   rustup
   scala-cli
   metals
   vscode
+  jetbrains.idea-community
   emacs
 
   ### DB ###
