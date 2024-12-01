@@ -117,8 +117,6 @@
   wget
   git
   vim
-  libgcc
-  gcc
   htop
   tree
   ripgrep
@@ -128,7 +126,6 @@
   gnupg
 
   ### Term + shell ###
-  kitty
   alacritty
   tmux
   neofetch
@@ -143,6 +140,7 @@
 
   ### Compilers / dev ###
   gcc
+  libgcc
   python3
   go
   ghc
@@ -152,7 +150,6 @@
   clojure
   R
   rustup
-  scala-cli
   metals
   vscode
   jetbrains.idea-community
