@@ -100,12 +100,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'derekwyatt/vim-scala'
 call plug#end()
 
-let g:fzf_layout = { 'down': '~40%' }
-let g:fzf_action = {
-  \ 'enter': 'e',
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.6, 'border': 'rounded' } }
+let $FZF_DEFAULT_OPTS = '--reverse --border'
 
 " tmux
 if &term =~ "screen"
