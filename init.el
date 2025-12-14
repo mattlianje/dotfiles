@@ -112,23 +112,21 @@
                   (interactive)
                   (list-buffers)))
 
-;; Projectile
+;; Project
 ;; ---------------------------
-(use-package projectile
+(use-package project
+  :ensure nil
+  :bind-keymap ("C-x p" . project-prefix-map)
   :init
-  (setq projectile-completion-system 'ivy)
+  (setq project-vc-extra-root-markers '(".project" ".projectile"))
   :config
-  (projectile-mode +1)
-  (setq projectile-enable-caching t)
-  (setq projectile-project-search-path '("~/repos"))
-  (setq projectile-generic-command "rg --files --hidden")
-
-  (use-package counsel-projectile
-    :ensure t
-    :config
-    (counsel-projectile-mode))
-
-  :bind (("C-x p" . projectile-command-map)))
+  (project-remember-projects-under "~/repos" t)
+  (define-key project-prefix-map (kbd "f") 'project-find-file)
+  (define-key project-prefix-map (kbd "s")
+    (lambda () 
+      (interactive)
+      (let ((default-directory (project-root (project-current t))))
+        (counsel-rg)))))
 
 ;; Ivy Mode 
 ;; ---------------------------
